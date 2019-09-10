@@ -19,7 +19,6 @@ namespace NCB {
     ui64 GetMonopolisticFreeCpuRam() {
         const ui64 totalMemorySize = (ui64)NSystemInfo::TotalMemorySize();
         const ui64 currentProcessRSS = NMemInfo::GetMemInfo().RSS;
-        Y_VERIFY(totalMemorySize >= currentProcessRSS, "total memory size < current process RSS");
         return totalMemorySize - currentProcessRSS;
     }
 
